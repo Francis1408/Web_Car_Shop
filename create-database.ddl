@@ -11,7 +11,7 @@
 
 CREATE TABLE anuncio (
     descricao VARCHAR2(100),
-    numero    NUMBER NOT NULL,
+    numero    NUMBER(3) NOT NULL,
     data      DATE NOT NULL,
     valor     NUMBER NOT NULL,
     carro     VARCHAR2(7) NOT NULL,
@@ -100,7 +100,7 @@ ALTER TABLE transacao
 
 
 
--- Relatório do Resumo do Oracle SQL Developer Data Modeler: 
+-- RelatÃ³rio do Resumo do Oracle SQL Developer Data Modeler: 
 -- 
 -- CREATE TABLE                             5
 -- CREATE INDEX                             0
