@@ -1,0 +1,68 @@
+<?php session_start() ?>
+<?php 
+	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
+		if (!$c) {
+	    	$m = oci_error();
+	    	trigger_error("Could not connect to database: ". $m["message"], E_USER_ERROR);
+		}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h4> SALVE </h4>
+	<a href="?logout">Fazer Logout</a>
+	<br>
+	<h1>CATÁLOGO</h1>
+	<br>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>CARRO</th>
+				<th>ANUNCIANTE</th>
+				<th>VALOR</th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<?php  
+				$s =  oci_parse($c, "SELECT * FROM ANUNCIO");
+
+				if(!$s) {
+				$m = oci_error($c);
+				trigger_error("Could not parse statment". $m["message"], E_USER_ERROR);
+				}
+
+				$e = oci_execute($s);
+
+				if(!$e){
+				$m = oci_error($s);
+				trigger_error("Não pôde executar a sentença: ". $m["message"], E_USER_ERROR);
+				}
+
+				while(($row = oci_fetch_array($s, OCI_BOTH)) != false) {
+					echo "<tr>\n;
+						<td>" . $row[1] . "</td>
+						<td>" . $row[0] . "</td>
+						<td>" . $row[5] . "</td>
+						<td>" . $row[3] . "</td>
+						<td>
+							<a href='detalhes'>Detalhes</a>
+						</td>
+
+					</tr>";
+				}
+			?>
+
+		</tbody>
+	</table>
+
+</body>
+</html>

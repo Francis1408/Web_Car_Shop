@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h4>LOGIN PAGE</h4>
+	<form method="post" action="loginAction.php">
+		<input type="text" name="Email" placeholder="Insira o email">
+		<input type="text" name="CPF" placeholder="Insira o CPF">
+		<input type="submit" value="Cadastrar">
+	</form>
+</body>
+</html>
