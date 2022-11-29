@@ -18,9 +18,34 @@
 
 	<?php  
 		if(!isset($_SESSION['login'])){
-			include('loginPage.php');
+			
+			if(isset($_POST['act'])){
+				$s = oci_parse($c, "SELECT * FROM USUARIO WHERE email = :1 AND userid = :2");
+				if(!$s) {
+					$m = oci_error($c);
+					trigger_error("Could not parse statment". $m["message"], E_USER_ERROR);
+				}
 
-		}else{
+				echo "Email: <h4>". $_POST['Email'] . "</h4> ";
+				echo "Email: <h4>". $_POST['CPF'] . "</h4> ";
+
+				oci_bind_by_name($s, ":1", $_POST['Email']);
+				oci_bind_by_name($s, ":2", $_POST['CPF']);
+
+				$e = oci_execute($s);
+				echo "<h4> Executou </h4>";
+				if(!$e){
+					$m = oci_error($s);
+					trigger_error("Não pôde executar a sentença: ". $m["message"], E_USER_ERROR);
+				}
+				else {
+				$_SESSION['login'] = $_POST['CPF'];
+				header("Location: index.php");	
+				}
+			}
+			include('loginPage.php');
+		}
+		else{
 			if(isset($_GET['logout'])){
 				unset($_SESSION['login']);
 				session_destroy();

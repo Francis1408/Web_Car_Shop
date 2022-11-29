@@ -7,10 +7,10 @@
 </head>
 <body>
 	<h4>LOGIN PAGE</h4>
-	<form method="post" action="loginAction.php">
+	<form method="post">
 		<input type="text" name="Email" placeholder="Insira o email">
 		<input type="text" name="CPF" placeholder="Insira o CPF">
-		<input type="submit" value="Cadastrar">
+		<input type="submit" name="act" value="Cadastrar">
 	</form>
 </body>
 </html>

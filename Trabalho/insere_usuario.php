@@ -23,7 +23,7 @@
 	$e = oci_execute($s, OCI_NO_AUTO_COMMIT);
 
 	if(!$e){
-		$m = oci_error($s)
+		$m = oci_error($s);
 		trigger_error("Não pôde executar a sentença: ". $m["message"], E_USER_ERROR);
 
 	} else {
