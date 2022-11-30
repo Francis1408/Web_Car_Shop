@@ -8,8 +8,8 @@
 <body>
 	<h4>LOGIN PAGE</h4>
 	<form method="post">
-		<input type="text" name="Email" placeholder="Insira o email">
-		<input type="text" name="CPF" placeholder="Insira o CPF">
+		<input type="text" name="email" placeholder="Insira o email">
+		<input type="text" name="cpf" placeholder="Insira o CPF">
 		<input type="submit" name="act" value="Cadastrar">
 	</form>
 </body>

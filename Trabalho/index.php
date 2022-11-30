@@ -1,4 +1,4 @@
-<?php session_start()  ?>
+<?php session_start();  ?>
 <?php  
 	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
 		if (!$c) {
@@ -26,8 +26,8 @@
 					trigger_error("Could not parse statment". $m["message"], E_USER_ERROR);
 				}
 
-				oci_bind_by_name($s, ":1", $_POST['Email']);
-				oci_bind_by_name($s, ":2", $_POST['CPF']);
+				oci_bind_by_name($s, ":1", $_POST['email']);
+				oci_bind_by_name($s, ":2", $_POST['cpf']);
 
 				$e = oci_execute($s);
 				if(!$e){
@@ -40,7 +40,7 @@
 					echo"Dados Inválidos";
 				}
 				else{
-					$_SESSION['login'] = $_POST['CPF'];
+					$_SESSION['login'] = $_POST['cpf'];
 					header("Location: index.php");
 				}
 				

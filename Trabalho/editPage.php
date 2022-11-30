@@ -17,9 +17,9 @@
 	    	trigger_error("Não pôde compilar a sentença: ". $m["message"], E_USER_ERROR);
 		}
 
-		oci_bind_by_name($s, ":1", $_POST['Descricao']);
-		oci_bind_by_name($s, ":2", $_POST['Valor']);
-		oci_bind_by_name($s, ":3", $_POST['Carro']);
+		oci_bind_by_name($s, ":1", $_POST['descricao']);
+		oci_bind_by_name($s, ":2", $_POST['valor']);
+		oci_bind_by_name($s, ":3", $_POST['carro']);
 		oci_bind_by_name($s, ":4", $_GET['editar']);
 		
 
@@ -70,13 +70,13 @@
 
 	<form method="post">
 		<label for="Descrição">Descrição:</label>
-		<input type="text"  size="100" name="Descricao" value= <?php echo" $row[0]" ?>>
+		<input type="text"  size="100" name="descricao" value= <?php echo" $row[0]" ?>>
 		<br>
 		<label for="Valor">Valor (R$):</label>
-		<input type="text" name="Valor" value= <?php echo" $row[3]" ?>>
+		<input type="text" name="valor" value= <?php echo" $row[3]" ?>>
 		<br>
 		<label for="Valor">Placa do Carro:</label>
-		<input type="text" name="Carro" value=<?php echo" $row[4]" ?>>
+		<input type="text" name="carro" value=<?php echo" $row[4]" ?>>
 		<br>
 		<input type="submit" name="alter" value="Alterar">
 	</form>

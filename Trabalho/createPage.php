@@ -1,4 +1,4 @@
-<?php  
+<?php 
 	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
 		if (!$c) {
 	    	$m = oci_error();
@@ -9,9 +9,9 @@
 
 
 <?php
-
 	if(isset($_POST['register'])){
-
+		session_start();
+		$_SESSION['placa'] = $_POST['placa'];
 		$s = oci_parse($c, "SELECT * FROM CARRO WHERE :1 = PLACA ");
 
 		if (!$s) {
@@ -19,7 +19,7 @@
 	    trigger_error("Não pôde compilar a sentença: ". $m["message"], E_USER_ERROR);
 		}
 
-		oci_bind_by_name($s, ":1", $_POST['Placa']);
+		oci_bind_by_name($s, ":1", $_POST['placa']);
 
 		$e = oci_execute($s);
 
@@ -39,11 +39,11 @@
 		    trigger_error("Não pôde compilar a sentença: ". $m["message"], E_USER_ERROR);
 			}
 
-			oci_bind_by_name($s, ":1", $_POST['Placa']);
-			oci_bind_by_name($s, ":2", $_POST['Modelo']);
-			oci_bind_by_name($s, ":3", $_POST['Ano']);
-			oci_bind_by_name($s, ":4", $_POST['Cor']);
-			oci_bind_by_name($s, ":5", $_POST['Marca']);
+			oci_bind_by_name($s, ":1", $_POST['placa']);
+			oci_bind_by_name($s, ":2", $_POST['modelo']);
+			oci_bind_by_name($s, ":3", $_POST['ano']);
+			oci_bind_by_name($s, ":4", $_POST['cor']);
+			oci_bind_by_name($s, ":5", $_POST['marca']);
 
 
 			$e = oci_execute($s, OCI_NO_AUTO_COMMIT);
@@ -66,10 +66,11 @@
 ?>
 
 <?php
-
+	
 	if(isset($_POST['publicar'])){
-
+		session_start();
 		echo"ENTREI AQUI";
+		print($_SESSION['placa']);
 		$s = oci_parse($c, "SELECT NUMERO FROM ANUNCIO");
 		if (!$s) {
 	    	$m = oci_error($c);
@@ -103,11 +104,11 @@
 
 		$d = date("d/m/Y");
 
-		oci_bind_by_name($s, ":1", $_POST['Descricao']);
+		oci_bind_by_name($s, ":1", $_POST['descricao']);
 		oci_bind_by_name($s, ":2", $number);
 		oci_bind_by_name($s, ":3", $d);
-		oci_bind_by_name($s, ":4", $_POST['Valor']);
-		oci_bind_by_name($s, ":5", $_POST['Placa']);
+		oci_bind_by_name($s, ":4", $_POST['valor']);
+		oci_bind_by_name($s, ":5", $_SESSION['placa']);
 		oci_bind_by_name($s, ":6", $_SESSION['login']);
 
 
@@ -126,6 +127,7 @@
 		 	header("Location: index.php");
 		}
 	}
+	
 ?>
 
 <!DOCTYPE html>

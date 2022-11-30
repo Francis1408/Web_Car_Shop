@@ -8,21 +8,21 @@
 </head>
 <body>
 	<h4>Preencha as informações do veículo que será anunciado</h4>
-	<form method="post">
+	<form method="post" action="./createPage.php">
 		<label for="Placa">Placa:</label>
-		<input type="text" name="Placa">
+		<input type="text" name="placa">
 		<br>
 		<label for="Modelo">Modelo:</label>
-		<input type="text" name="Modelo">
+		<input type="text" name="modelo">
 		<br>
 		<label for="Ano">Ano:</label>
-		<input type="text" name="Ano">
+		<input type="text" name="ano">
 		<br>
 		<label for="Cor">Cor:</label>
-		<input type="text" name="Cor">
+		<input type="text" name="cor">
 		<br>
 		<label for="Marca">Marca:</label>
-		<input type="text" name="Marca">
+		<input type="text" name="marca">
 		<br>
 		<input type="submit" name="register" value="Publicar">
 	</form>

@@ -7,12 +7,13 @@
 </head>
 <body>
 	<h3>Criar Anúncio</h3>
+	<form method="post" action="./createPage.php">
 		<h4>Dê uma breve descrição</h4>
 		<label for="Descrição">Descrição:</label>
-		<input type="text"  size="100" name="Descricao">
+		<input type="text" size="100" name="descricao">
 		<br>
 		<label for="Valor">Valor (R$):</label>
-		<input type="text" name="Valor">
+		<input type="text" name="valor">
 		
 		<input type="submit" name="publicar" value="Publicar">
 	</form>
