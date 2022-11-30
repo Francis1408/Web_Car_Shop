@@ -50,8 +50,8 @@
 					echo "<tr>\n
 						<td>" . $row[1] . "</td>
 						<td>" . $row[0] . "</td>
-						<td>" . $row[4] . "</td>
-						<td>" . $row[3] . "</td>
+						<td>" . $row[2] . "</td>
+						<td> R$ " . $row[3] . "</td>
 						<td>
 							<a href='?editar=". $row[1] ."'>Editar</a>
 							<a href='#'>Excluir</a>

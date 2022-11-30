@@ -53,6 +53,7 @@
 				session_destroy();
 				header("Location: index.php");
 			}
+			$_GET['catalogo'] = 1;
 			include('menuPage.php');
 		}
 

@@ -12,11 +12,14 @@
 	<a href="?meusAnuncios">Meus Anúncios</a>
 	<br>
 	<a href="?criarAnuncio">Criar Anúncio</a>
+	<br>
+	<a href="?catalogo">Catalogo</a>
+	<br>
+	<a href="?transacoes">Minhas Transações</a>
 	<?php  
-		include("catalogPage.php");
 
-		if(isset($_GET['detalhes'])){
-			include("detailsPage.php");
+		if(isset($_GET['detalhesCatalogo'])){
+			include("detailsAnuncioPage.php");
 		}
 		else if(isset($_GET['meusAnuncios'])){
 			include("meusAnuncios.php");
@@ -27,6 +30,15 @@
 		}
 		else if(isset($_GET['criarAnuncio'])){
 			include("createPage.php");
+		}
+		else if(isset($_GET['transacoes'])){
+			include("transacoesPage.php");
+		}
+		else if(isset($_GET['detalhesTransacao1']) or isset($_GET['detalhesTransacao2']) ){
+			include("detailsTransacao.php");
+		}
+		else if(isset($_GET['catalogo'])){
+			include("catalogPage.php");
 		}
 
 	?>

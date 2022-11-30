@@ -122,8 +122,6 @@
 		else {
 			print "Anuncio publicado com sucesso!";
 		 	oci_commit($c);
-		 	//unset($_POST['register']);
-		 	//unset($_SESSION['publicar']);
 		 	header("Location: index.php");
 		}
 	}

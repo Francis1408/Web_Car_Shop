@@ -30,7 +30,8 @@
 
 		<tbody>
 			<?php  
-				$s =  oci_parse($c, "SELECT * FROM ANUNCIO WHERE VENDEDOR != :1");
+				$s =  oci_parse($c, "SELECT * FROM ANUNCIO A 
+									 where numero not in (SELECT ANUNCIO FROM TRANSACAO ) and VENDEDOR != :1");
 
 				if(!$s) {
 				$m = oci_error($c);
@@ -52,7 +53,7 @@
 						<td>" . $row[5] . "</td>
 						<td>" . $row[3] . "</td>
 						<td>
-							<a href='?detalhes=". $row[1] ."'>Detalhes</a>
+							<a href='?detalhesCatalogo=". $row[1] ."'>Detalhes</a>
 						</td>
 
 					</tr>";
