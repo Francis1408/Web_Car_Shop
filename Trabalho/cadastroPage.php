@@ -15,3 +15,5 @@
         <INPUT type="submit" value="Cadastrar">
         </FORM>
       _HTML_;
+
+?>

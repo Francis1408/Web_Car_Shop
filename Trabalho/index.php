@@ -26,22 +26,24 @@
 					trigger_error("Could not parse statment". $m["message"], E_USER_ERROR);
 				}
 
-				echo "Email: <h4>". $_POST['Email'] . "</h4> ";
-				echo "Email: <h4>". $_POST['CPF'] . "</h4> ";
-
 				oci_bind_by_name($s, ":1", $_POST['Email']);
 				oci_bind_by_name($s, ":2", $_POST['CPF']);
 
 				$e = oci_execute($s);
-				echo "<h4> Executou </h4>";
 				if(!$e){
 					$m = oci_error($s);
 					trigger_error("Não pôde executar a sentença: ". $m["message"], E_USER_ERROR);
 				}
-				else {
-				$_SESSION['login'] = $_POST['CPF'];
-				header("Location: index.php");	
+
+				$row = oci_fetch_array($s);
+				if(empty($row)){
+					echo"Dados Inválidos";
 				}
+				else{
+					$_SESSION['login'] = $_POST['CPF'];
+					header("Location: index.php");
+				}
+				
 			}
 			include('loginPage.php');
 		}
