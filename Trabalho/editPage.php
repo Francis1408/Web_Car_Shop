@@ -44,6 +44,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EDIÇÃO</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h4>Editar Anuncio</h4>
@@ -78,7 +79,7 @@
 		<label for="Valor">Placa do Carro:</label>
 		<input type="text" name="carro" value=<?php echo" $row[4]" ?>>
 		<br>
-		<input type="submit" name="alter" value="Alterar">
+		<input type="submit" name="alter" value="Alterar" class="button">
 	</form>
 
 </body>

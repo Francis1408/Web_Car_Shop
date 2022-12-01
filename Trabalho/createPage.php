@@ -1,5 +1,5 @@
 <?php 
-	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
+	oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
 		if (!$c) {
 	    	$m = oci_error();
 	    	trigger_error("Could not connect to database: ". $m["message"], E_USER_ERROR);
@@ -134,6 +134,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MENU</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<?php  

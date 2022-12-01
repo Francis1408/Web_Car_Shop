@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h4>Preencha as informações do veículo que será anunciado</h4>
@@ -24,7 +25,7 @@
 		<label for="Marca">Marca:</label>
 		<input type="text" name="marca">
 		<br>
-		<input type="submit" name="register" value="Publicar">
+		<input type="submit" name="register" value="Publicar" class="button">
 	</form>
 </body>
 </html>
