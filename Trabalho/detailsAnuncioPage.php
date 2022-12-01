@@ -13,7 +13,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MENU</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<?php  
@@ -47,7 +46,7 @@
 			echo "<h4> Email: ". $row[6] ."</h4> <br>";
 			echo "<h4> Telefone: ". $row[7] ."</h4> <br>";
 
-			echo"<a href='?comprar'>Comprar</a>"
+			echo"<a href='?comprar=". $row[1] ."'>Comprar</a>"
 
 
 	?>

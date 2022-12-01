@@ -13,7 +13,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MENU</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>CATÁLOGO</h1>
@@ -31,8 +30,8 @@
 
 		<tbody>
 			<?php  
-				$s =  oci_parse($c, "SELECT * FROM ANUNCIO A 
-									 where numero not in (SELECT ANUNCIO FROM TRANSACAO ) and VENDEDOR != :1");
+				$s =  oci_parse($c, " SELECT A.NUMERO, A.DESCRICAO, A.DATA, A.VALOR, U.NOME FROM ANUNCIO A JOIN USUARIO U ON (A.VENDEDOR = U.USERID)
+									  WHERE numero not in (SELECT ANUNCIO FROM TRANSACAO ) and A.VENDEDOR != :1");
 
 				if(!$s) {
 				$m = oci_error($c);
@@ -49,12 +48,12 @@
 
 				while(($row = oci_fetch_array($s, OCI_BOTH)) != false) {
 					echo "<tr>\n
-						<td>" . $row[1] . "</td>
 						<td>" . $row[0] . "</td>
-						<td>" . $row[5] . "</td>
+						<td>" . $row[1] . "</td>
+						<td>" . $row[2] . "</td>
 						<td>" . $row[3] . "</td>
 						<td>
-							<a href='?detalhesCatalogo=". $row[1] ."'>Detalhes</a>
+							<a href='?detalhesCatalogo=". $row[0] ."'>Detalhes</a>
 						</td>
 
 					</tr>";

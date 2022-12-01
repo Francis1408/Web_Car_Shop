@@ -14,7 +14,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>MENU</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h1>MEUS ANUNCIOS</h1>
@@ -32,7 +31,7 @@
 
 		<tbody>
 			<?php  
-				$s =  oci_parse($c, "SELECT * FROM ANUNCIO WHERE VENDEDOR = :1");
+				$s =  oci_parse($c, "SELECT * FROM ANUNCIO WHERE NUMERO not in (SELECT ANUNCIO FROM TRANSACAO ) and VENDEDOR = :1");
 
 				if(!$s) {
 				$m = oci_error($c);
@@ -55,7 +54,7 @@
 						<td> R$ " . $row[3] . "</td>
 						<td>
 							<a href='?editar=". $row[1] ."'>Editar</a>
-							<a href='#'>Excluir</a>
+							<a href='?excluir=". $row[1] . "'>Excluir</a>
 						</td>
 
 					</tr>";

@@ -10,8 +10,8 @@
 <?php 
 
 	if(isset($_POST['alter'])){
-		$s = oci_parse($c, "UPDATE ANUNCIO SET DESCRICAO = :1, VALOR = :2, CARRO = :3 
-						WHERE NUMERO = :4 ");
+		$s = oci_parse($c, "UPDATE ANUNCIO SET DESCRICAO = :1, VALOR = :2
+						WHERE NUMERO = :3 ");
 		if (!$s) {
 	    	$m = oci_error($c);
 	    	trigger_error("Não pôde compilar a sentença: ". $m["message"], E_USER_ERROR);
@@ -19,8 +19,7 @@
 
 		oci_bind_by_name($s, ":1", $_POST['descricao']);
 		oci_bind_by_name($s, ":2", $_POST['valor']);
-		oci_bind_by_name($s, ":3", $_POST['carro']);
-		oci_bind_by_name($s, ":4", $_GET['editar']);
+		oci_bind_by_name($s, ":3", $_GET['editar']);
 		
 
 		$e = oci_execute($s, OCI_NO_AUTO_COMMIT);
@@ -44,7 +43,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EDIÇÃO</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h4>Editar Anuncio</h4>
@@ -76,10 +74,7 @@
 		<label for="Valor">Valor (R$):</label>
 		<input type="text" name="valor" value= <?php echo" $row[3]" ?>>
 		<br>
-		<label for="Valor">Placa do Carro:</label>
-		<input type="text" name="carro" value=<?php echo" $row[4]" ?>>
-		<br>
-		<input type="submit" name="alter" value="Alterar" class="button">
+		<input type="submit" name="alter" value="Alterar">
 	</form>
 
 </body>

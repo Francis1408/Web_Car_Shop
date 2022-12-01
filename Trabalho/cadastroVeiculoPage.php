@@ -5,11 +5,10 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<h4>Preencha as informações do veículo que será anunciado</h4>
-	<form method="post" action="./createPage.php">
+	<form method="post">
 		<label for="Placa">Placa:</label>
 		<input type="text" name="placa">
 		<br>
@@ -25,7 +24,7 @@
 		<label for="Marca">Marca:</label>
 		<input type="text" name="marca">
 		<br>
-		<input type="submit" name="register" value="Publicar" class="button">
+		<input type="submit" name="register" value="Publicar">
 	</form>
 </body>
 </html>

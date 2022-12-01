@@ -13,7 +13,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LOGIN</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -46,7 +45,13 @@
 				}
 				
 			}
-			include('loginPage.php');
+
+			if(isset($_GET['cadastro'])){
+				include("cadastroPage.php");
+			}
+			else{
+				include('loginPage.php');
+			}	
 		}
 		else{
 			if(isset($_GET['logout'])){
