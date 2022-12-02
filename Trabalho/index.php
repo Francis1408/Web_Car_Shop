@@ -13,13 +13,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>LOGIN</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
 
 	<?php  
 		if(!isset($_SESSION['login'])){
-			
-			if(isset($_POST['act'])){
+			$_SESSION['pass_err'] = null;
+			if(isset($_POST['entrar'])){
 				$s = oci_parse($c, "SELECT * FROM USUARIO WHERE email = :1 AND userid = :2");
 				if(!$s) {
 					$m = oci_error($c);
@@ -34,10 +36,10 @@
 					$m = oci_error($s);
 					trigger_error("Não pôde executar a sentença: ". $m["message"], E_USER_ERROR);
 				}
-
 				$row = oci_fetch_array($s);
 				if(empty($row)){
-					echo"Dados Inválidos";
+					// echo 'Dados Inválidos';
+					$_SESSION['pass_err'] = 'Dados Inválidos';
 				}
 				else{
 					$_SESSION['login'] = $_POST['cpf'];
