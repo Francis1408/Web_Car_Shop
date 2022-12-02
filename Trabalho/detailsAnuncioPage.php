@@ -46,7 +46,7 @@
 			echo "<h4> Email: ". $row[6] ."</h4> <br>";
 			echo "<h4> Telefone: ". $row[7] ."</h4> <br>";
 
-			echo"<a href='?comprar=". $row[1] ."'>Comprar</a>"
+			echo"<a href='?comprar=". $row[1] ."&vendedor=". $row[5] ."&preco=". $row[3] ."'>Comprar</a>"
 
 
 	?>

@@ -1,3 +1,13 @@
+<?php  
+    
+    $_SESSION['anuncio'] = $_GET['comprar'];
+    $_SESSION['vendedor'] = $_GET['vendedor'];
+    $_SESSION['preco'] = $_GET['preco'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

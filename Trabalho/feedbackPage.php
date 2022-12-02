@@ -8,7 +8,7 @@
 <body>
 
 	 <h3> Dê um feedback do vendedor </h3>
-    <form method="post">
+    <form method="post"  action="./compraAction.php">
     	<h4>Avaliação</h4>
         <input type="radio" id="positivo" name="avaliacao" Value="Positiva">
         <label for="positivo">Positiva</label><br>

@@ -68,7 +68,6 @@
 	
 	if(isset($_POST['publicar'])){
 		session_start();
-		print($_SESSION['placa']);
 		$s = oci_parse($c, "SELECT NUMERO FROM ANUNCIO");
 		if (!$s) {
 	    	$m = oci_error($c);

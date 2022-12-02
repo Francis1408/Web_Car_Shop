@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 </head>
 <body>
 	<h3>Criar Anúncio</h3>
-	<form method="post" action="./createPage.php">
+	<form method="post" action="./createAction.php">
 		<h4>Dê uma breve descrição</h4>
 		<label for="Descrição">Descrição:</label>
 		<input type="text" size="100" name="descricao">
