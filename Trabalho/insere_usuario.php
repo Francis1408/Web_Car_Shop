@@ -1,7 +1,7 @@
 <?php 
 	require 'teste.php';
 
-	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
+	$c = oci_connect("admin", "admin", "bdengcomp_high");
 
 	if (!$c) {
     	$m = oci_error();

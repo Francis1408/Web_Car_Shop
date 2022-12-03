@@ -1,5 +1,5 @@
 <?php
-$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
+$c = oci_connect("admin", "admin", "bdengcomp_high");
 $_SESSION['success_rem_vei'] = null;
 if (!$c) {
 	$m = oci_error();
