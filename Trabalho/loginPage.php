@@ -1,9 +1,8 @@
-<div class="container">
-	<link rel="icon" href="assets\img\relampago95.png" />
+<div class="container-inicial">
 	<div class="form-image">
 		<img src="assets\img\relampago.png">
 	</div>
-	<div class="form">
+	<div class="form-login">
 		<form method="post">
 			<div class="msg">
 				<span><?php echo $_SESSION['pass_err']; ?></span>
@@ -23,12 +22,14 @@
 						Entrar
 					</button>
 				</div>
-				<div class="login-button">
-					<a href="?cadastro">
-						Cadastrar
-					</a>
-				</div>
 			</div>
 		</form>
+	</div>
+	<div class="subcontainer-inicial">
+		<div class="cad-button">
+			<a href="?cadastro">
+				Cadastrar
+			</a>
+		</div>
 	</div>
 </div>

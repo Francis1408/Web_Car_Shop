@@ -1,9 +1,10 @@
 <?php 
-	oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
-		if (!$c) {
-	    	$m = oci_error();
-	    	trigger_error("Could not connect to database: ". $m["message"], E_USER_ERROR);
-		}
+	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
+	
+	if (!$c) {
+	    $m = oci_error();
+	    trigger_error("Could not connect to database: ". $m["message"], E_USER_ERROR);
+	}
 ?>	
 
 
@@ -55,10 +56,12 @@
 			else {
 			 	oci_commit($c);
 			}
-			echo"Veículo Cadastrado com Sucesso!";
+			$_SESSION['success_cad_vei'] = 'Veículo Cadastrado com Sucesso!';
+			// echo"Veículo Cadastrado com Sucesso!";
 		}
 		else{
-			echo"Veículo já Cadastrado";
+			$_SESSION['success_cad_vei'] = 'Veículo já Cadastrado!';
+			// echo"Veículo já Cadastrado";
 		}
 
 	}
@@ -107,7 +110,7 @@
 		oci_bind_by_name($s, ":1", $_POST['descricao']);
 		oci_bind_by_name($s, ":2", $number);
 		oci_bind_by_name($s, ":3", $d);
-		oci_bind_by_name($s, ":4", $_POST['valor']);
+		oci_bind_by_name($s, ":4", str_replace(',', '.', $_POST['valor']));
 		oci_bind_by_name($s, ":5", $_SESSION['placa']);
 		oci_bind_by_name($s, ":6", $_SESSION['login']);
 

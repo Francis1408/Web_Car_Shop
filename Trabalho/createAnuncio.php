@@ -1,22 +1,42 @@
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-</head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head> -->
+
 <body>
-	<h3>Criar Anúncio</h3>
-	<form method="post" action="./createAction.php">
-		<h4>Dê uma breve descrição</h4>
-		<label for="Descrição">Descrição:</label>
-		<input type="text" size="100" name="descricao">
-		<br>
-		<label for="Valor">Valor (R$):</label>
-		<input type="text" name="valor">
-		
-		<input type="submit" name="publicar" value="Publicar">
-	</form>
+	<div class="container-inicial">
+		<div class="form-cad">
+			<form method="post" action="./createAction.php">
+				<div class="msg">
+					<span><?php echo $_SESSION['success_cad_vei']; ?></span>
+				</div>
+
+				<div class="form-header">
+					<h1>Criar Anúncio</h1>
+				</div>
+				<div class="input-group">
+					<div class="input-box">
+						<label for="descricao">Dê uma breve descrição</label>
+						<input id="descricao" type="text" name="descricao" placeholder="Descrição" size="100">
+					</div>
+					<div class="input-box">
+						<label for="valor">Preço</label>
+						<input id="valor" type="text" name="valor" placeholder="1000,00">
+					</div>
+					<div class="login-button">
+						<button type="submit" name="publicar">
+							Publicar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
-</html>
+
+<!-- </html> -->
