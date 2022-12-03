@@ -9,17 +9,6 @@ if (!$c) {
 ?>
 
 
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>TRANSAÇÕES</title>
-</head>
-
-<body> -->
-
 <div class="container">
 	<div class="page-header">
 		<h1>Minhas Vendas</h1>
@@ -124,6 +113,3 @@ if (!$c) {
 		</div>
 	</div>
 </div>
-<!-- </body>
-
-</html> -->
