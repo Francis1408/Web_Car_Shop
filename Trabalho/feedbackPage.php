@@ -6,22 +6,35 @@
 	<title>FEEDBACK</title>
 </head>
 <body>
+    <div class="container-inicial">
+        <div class="form-cad">
+            <form method="post"  action="./compraAction.php">
+                <div class="form-header">
+                    <h1> Dê um feedback do vendedor </h1>
+                </div>
+                <div class="input-group" style="color:white">
+                    <div class="input-box">
+                        	<h3>Avaliação</h3>
+                            <br>
+                            <label for="positivo">Positiva</label><br>
+                            <input type="radio" id="positivo" name="avaliacao" Value="Positiva">
+                            <label for="negativo">Negativa</label><br>
+                            <input type="radio" id="negativo" name="avaliacao" Value="Negativa">                      
+                     </div>
 
-	 <h3> Dê um feedback do vendedor </h3>
-    <form method="post"  action="./compraAction.php">
-    	<h4>Avaliação</h4>
-        <input type="radio" id="positivo" name="avaliacao" Value="Positiva">
-        <label for="positivo">Positiva</label><br>
-        <input type="radio" id="negativo" name="avaliacao" Value="Negativa">
-        <label for="negativo">Negativa</label><br>
+                    <div class="input-box">
+                        <label for="comentario">Comentário</label><br>
+                        <input type="text" size="100" id="comentario" name="comentario">
+                    </div>
 
-        <h4>Comentário</h4>
-        <label for="comentario">Comentário</label><br>
-        <input type="text" size="100" id="comentario" name="comentario">
-
-  
-        <input type="submit" name="avaliar" value="Avaliar">
-    </form>
-
+                     <div class="login-button">
+                        <button type="submit"  name="avaliar">
+                            Avaliar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
