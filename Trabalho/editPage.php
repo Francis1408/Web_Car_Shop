@@ -1,9 +1,9 @@
 <?php
-	$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
-	if (!$c) {
-		$m = oci_error();
-		trigger_error("Could not connect to database: " . $m["message"], E_USER_ERROR);
-	}
+$c = oci_connect(***REMOVED***, ***REMOVED***, "bdengcomp_high");
+if (!$c) {
+	$m = oci_error();
+	trigger_error("Could not connect to database: " . $m["message"], E_USER_ERROR);
+}
 
 ?>
 
@@ -46,8 +46,6 @@ if (isset($_POST['alter'])) {
 </head>
 
 <body>
-	<h4>Editar Anuncio</h4>
-
 	<?php
 	$s =  oci_parse($c, "SELECT * FROM ANUNCIO WHERE :1 = NUMERO");
 
@@ -68,16 +66,30 @@ if (isset($_POST['alter'])) {
 
 	?>
 
-	<form method="post">
-		<label for="Descrição">Descrição:</label>
-		<input type="text" size="100" name="descricao" value=<?php echo " $row[0]" ?>>
-		<br>
-		<label for="Valor">Valor (R$):</label>
-		<input type="text" name="valor" value=<?php echo " $row[3]" ?>>
-		<br>
-		<input type="submit" name="alter" value="Alterar">
-	</form>
-
+	<div class="container-inicial">
+		<div class="form-cad">
+			<form method="post">
+				<div class="form-header">
+					<h1>Editar Anúncio</h1>
+				</div>
+				<div class="input-group">
+					<div class="input-box">
+						<label for="descricao">Descrição</label>
+						<input id="descricao" type="text" name="descricao" size="100" value="<?php echo " $row[0]" ?>" placeholder="Descrição">
+					</div>
+					<div class="input-box">
+						<label for="valor">Valor (R$)</label>
+						<input id="valor" type="text" name="valor" value="<?php echo " $row[3]" ?>" placeholder="Valor">
+					</div>
+					<div class="login-button">
+						<button type="submit" name="alter">
+							Alterar
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 
 </html>

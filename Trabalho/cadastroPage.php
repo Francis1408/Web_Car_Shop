@@ -38,16 +38,6 @@ if (isset($_POST["cadastrar"])) {
 
 
 ?>
-
-
-<!-- <<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CADASTRO</title>
-</head>
-<body> -->
 <div class="container-inicial">
     <div class="form-cad">
         <form method="post">
@@ -85,10 +75,9 @@ if (isset($_POST["cadastrar"])) {
     </div>
 </div>
 
-<!--     
+    
 
 
 </body>
 </html>
 
- -->
